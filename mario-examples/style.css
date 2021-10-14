@@ -1,0 +1,112 @@
+/*// BASE STYLES //*/
+
+html, body{
+  height: 100%;
+  width:100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+
+.sky{
+  height: 40%;
+  background: skyblue;
+}
+
+.road{
+  height: 30%;
+  background: dimgrey;
+  box-sizing: border-box;
+  border-top: 10px solid grey;
+  border-bottom: 10px solid grey;
+  width: 100%;
+}
+.water{
+  height: 90%;
+}
+
+
+/*// ELEMENTS TO ANIMATE //*/
+
+.sasuke {
+  position: absolute;
+  top: 560px;
+  width: 9cm;
+  height: 12cm;
+  left: 0px;
+  /* Call the keyframe */
+  animation-name:none;
+  /* Specify how long you want the animation to last for */
+  animation-duration: 3s;
+  /* It takes the last keyframe element (to) and applies it to the image */
+  animation-fill-mode: forwards;
+  
+  /* It takes the first keyframe element (from) and applies it to the image */
+  /* animation-fill-mode: backwards; */
+  
+  /* It takes the first keyframe element (from) and applies it to the image */
+  /* animation-fill-mode: both; */
+  
+  /* Delays the animation */
+  /* animation-delay: 2s; */
+
+  /* Determines how many times you want the animation to repeat */
+  animation-iteration-count: infinite;
+
+  /* Determines the speed of the animation */
+  /* animation-timing-function: ease; */
+
+  /* can creating your own timing option */
+  /* Here you can create your own speed and different intervals of the animation: https://cubic-bezier.com/ */
+  /* animation-timing-function: cubic-bezier(3, 2, 1, 0); */
+}
+
+.naruto {
+  position: absolute;
+  top: 650px;
+  width: 5cm;
+  height: 7cm;
+  left: 0px;
+  animation-name: drive;
+  animation-duration: 3s;
+  /* animation-fill-mode: backwards; */
+  /* animation-iteration-count: forwards; */
+  animation-timing-function: cubic-bezier(3, 1, 0, 0);
+  
+  /* Can choose the direction of the animation */
+  animation-direction:reverse;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 180px;
+  opacity: 0.5;
+  /* Short hand, the first item has to be animation and second item has to be duration, the rest of the order does not matter */
+  animation: wind 80s linear infinite reverse;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top:0;
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 60s linear infinite reverse;
+}
+
+/*// KEYFRAMES //*/
+
+/* Image will move from the right to the left */
+@keyframes drive {
+  from { transform: translateX(-100px);} /* Starting point */
+  to { transform: translateX(1700px);} /* Ending point */
+}
+
+@keyframes wind {
+  from { left: -300px }
+  to { left: 100% }
+}
